@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Your Result</h2>
+<div class="alert alert-info">
+    {{ result }}
+</div>
+<a href="{% url 'quiz' %}" class="btn btn-secondary">Take the Test Again</a>
+{% endblock %}
