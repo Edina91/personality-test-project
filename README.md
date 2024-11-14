@@ -18,6 +18,6 @@ This app presents users with a set of questions and provides a basic personality
 
 ## Prerequisites
 
-- Python 3.8 or higher
+- Python 3.11 or higher
 - pip (Python package manager)
 - Virtual environment tool (optional but recommended)
