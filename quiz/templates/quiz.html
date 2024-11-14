@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Personality Test</h2>
+<form method="post">
+    {% csrf_token %}
+    {% for question in questions %}
+    <div class="mb-3">
+        <p><strong>{{ question.id }}. {{ question.question }}</strong></p>
+        {% for option in question.options %}
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{ question.id }}" id="{{ question.id }}_{{ forloop.counter }}" value="{{ option }}" required>
+            <label class="form-check-label" for="{{ question.id }}_{{ forloop.counter }}">
+                {{ option }}
+            </label>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
